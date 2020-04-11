@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-
+# Read file using genfromtxt
 iris_data = np.genfromtxt("iris.data", delimiter=',')
 
 # Code from Wikipedia 'Five Number Summary' page
@@ -21,7 +21,7 @@ measurement_dict = {
 }
 
 
-# for loop 
+# for loop outputs summary of data 
 for measurement in measurement_dict:
     print(fivenum(measurement_dict[measurement]))
     
