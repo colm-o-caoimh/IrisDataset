@@ -1,0 +1,16 @@
+SUMMARY OF VARIABLES IN IRIS DATASET
+
+            Sepal_Length  Sepal_Width  Petal_Length  Petal_Width
+count            150.000      150.000       150.000      150.000
+mean               5.843        3.054         3.759        1.199
+std                0.828        0.434         1.764        0.763
+min                4.300        2.000         1.000        0.100
+1st quart.         5.100        2.800         1.600        0.300
+median             5.800        3.000         4.350        1.300
+3rd quart.         6.400        3.300         5.100        1.800
+max                7.900        4.400         6.900        2.500
+
+                Species Count
+Type_A      Iris-setosa    50
+Type_B  Iris-versicolor    50
+Type_C   Iris-virginica    50

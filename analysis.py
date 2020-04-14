@@ -5,38 +5,37 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-# Import data using pandas
+# Import data as pandas dataframe
 iris_data = pd.read_csv('iris.data', header=None)
 
-num_values = iris_data.iloc[:,0:4]
-x = num_values.describe()
-print(x)
+# Isolate columns according to data type
+float_values = iris_data.iloc[:,0:4]
+str_values = iris_data.iloc[:,4]
 
+# Use describe() function to summarise data
+float_summary = round(float_values.describe(), 3)
+str_summary = str_values.describe()
 
-'''
-# Function to calculate 5 number summary for dataset
-def fivenum(data):
-    summary_points = np.percentile(data, [0, 25, 50, 75, 100], interpolation='midpoint')
-    return summary_points
+# Rename columns and rows in float_summary
+float_summary.columns = ['Sepal_Length', 'Sepal_Width', 'Petal_Length', 'Petal_Width']
+float_summary.rename(index={"25%": "1st quart.", "50%": "median", "75%": "3rd quart."}, inplace=True)
 
-# Assign variable to each 5 number summary
-sep_length = fivenum(iris_data.iloc[:,0])
-sep_width = fivenum(iris_data.iloc[:,1])
-pet_length = fivenum(iris_data.iloc[:,2])
-pet_width = fivenum(iris_data.iloc[:,3])
+# Establish 3 unique values in str_summary
+str_summary = str_values.unique()
 
-print(sep_length)
+# Transpose str_summary array and convert to dataframe
+str_summary = str_summary[:, None]
+str_summary = pd.DataFrame({"Species": str_summary[:, 0]})
 
+# Add column containing quantity of unique values
+quantity = ['50', '50', '50']
+str_summary['Count'] = quantity
 
-# Combine each array into one 2d array. 
-# Transpose for improved visualisation
-#summary_arr = np.vstack((sep_length, sep_width, pet_length, pet_width))
-#summary_arr = summary_arr.T
+# Rename rows in str_summary
+str_summary.index = ['Type_A', 'Type_B', 'Type_C']
 
-# Assign lables for rows and columns of dataframe
-row_names = ['min.', '1st quart.', 'mean', '3rd quart.', 'max.']
-col_names = ['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width']
-
-# Create dataframe for more effective presentation
-summary_df = pd.DataFrame(summary_arr, index=row_names, columns=col_names)
-print(summary_df)'''
+# Write summary output to text file
+with open("iris_summary.txt", "w") as f:
+    f.write("SUMMARY OF VARIABLES IN IRIS DATASET\n\n")
+    f.write(float_summary.to_string() + "\n\n")
+    f.write(str_summary.to_string())
