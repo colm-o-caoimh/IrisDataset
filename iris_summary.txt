@@ -11,7 +11,7 @@ median             5.800        3.000         4.350        1.300
 3rd quart.         6.400        3.300         5.100        1.800
 max                7.900        4.400         6.900        2.500
 
-                Species Count
-Type_A      Iris-setosa    50
-Type_B  Iris-versicolor    50
-Type_C   Iris-virginica    50
+                   Species Count
+Species_A      Iris-setosa    50
+Species_B  Iris-versicolor    50
+Species_C   Iris-virginica    50
