@@ -12,7 +12,31 @@ iris_data = pd.read_csv('iris.data', header=None)
 float_values = iris_data.iloc[:,0:4]
 str_values = iris_data.iloc[:,4]
 
+sep_len = iris_data.iloc[:,0]
+sep_width = iris_data.iloc[:,1]
+pet_len = iris_data.iloc[:,2]
+pet_width = iris_data.iloc[:,3]
+species = iris_data.iloc[:,4]
 
+
+
+def irisScatter(data1, data2, catcol):
+    #fig, ax = plt.subplots()
+    categories = np.unique(catcol)
+    colors = np.linspace(0, 1, len(categories))
+    colordict = dict(zip(categories, colors))
+    catcol = catcol.apply(lambda x: colordict[x])
+    fig = plt.scatter(data1, data2, c=catcol)
+    return fig
+
+result = irisScatter(sep_len, sep_width, species)
+plt.show()
+
+
+
+
+
+'''
 # Use describe() function to summarise data
 float_summary = round(float_values.describe(), 3)
 str_summary = str_values.describe()
@@ -74,3 +98,4 @@ var_hist(sep_width, 2, 'sepal_width_cm', 'count', 'Sepal Width', 'sepal_width.pn
 var_hist(pet_len, 3, 'petal_length_cm', 'count', 'Petal Length', 'petal_length.png')
 var_hist(pet_width, 4, 'petal_width_cm', 'count', 'Petal Width', 'petal_width.png')
 var_hist2(species, 5, 'species', 'count', 'Iris Species', 'species.png')
+'''
