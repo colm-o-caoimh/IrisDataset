@@ -19,21 +19,40 @@ pet_width = iris_data.iloc[:,3]
 species = iris_data.iloc[:,4]
 
 
+fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2)
+ax1.scatter(sep_len, sep_width)
+ax2.scatter(sep_len, pet_len)
 
-def irisScatter(data1, data2, catcol):
-    #fig, ax = plt.subplots()
-    categories = np.unique(catcol)
-    colors = np.linspace(0, 1, len(categories))
-    colordict = dict(zip(categories, colors))
-    catcol = catcol.apply(lambda x: colordict[x])
-    fig = plt.scatter(data1, data2, c=catcol)
-    return fig
-
-result = irisScatter(sep_len, sep_width, species)
 plt.show()
 
 
 
+'''
+# Write function which outputs scatterplot with each species coloured individually
+# Code found on stackoverflow.com (see references)
+def irisScatter(data1, data2, species):
+    #fig, ax = plt.subplots()
+    fig = plt.figure()
+    fig.add_subplot()
+    categories = np.unique(species)
+    colors = np.linspace(0, 1, len(categories))
+    colordict = dict(zip(categories, colors))
+    species = species.apply(lambda x: colordict[x])
+    plt.scatter(data1, data2, c=species)
+    #ax.scatter(data1, data2, c=species)
+    #fig.add_axes(ax)
+    plt.show()
+    return fig
+
+irisScatter(sep_len, sep_width, species)
+irisScatter(sep_len, pet_len, species)
+#irisScatter(sep_len, pet_width, species)
+#irisScatter(sep_width, pet_len, species)
+#irisScatter(sep_width, pet_width, species)
+#irisScatter(pet_len, pet_width, species)
+
+#plt.show()
+'''
 
 
 '''
