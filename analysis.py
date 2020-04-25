@@ -4,19 +4,37 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+import seaborn as sns
 
 # Import data as pandas dataframe
 iris_data = pd.read_csv('iris.data', header=None)
 
+iris_data.columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
+
+sns.set_style("darkgrid")
+sns.lmplot(x='sepal_length', y='sepal_width', data=iris_data, fit_reg=False, hue='species')
+plt.show()
+
+
+'''
 # Isolate columns according to data type
 float_values = iris_data.iloc[:,0:4]
 str_values = iris_data.iloc[:,4]
 
+# Isolate each column for data manipulation
 sep_len = iris_data.iloc[:,0]
 sep_width = iris_data.iloc[:,1]
 pet_len = iris_data.iloc[:,2]
 pet_width = iris_data.iloc[:,3]
 species = iris_data.iloc[:,4]
+
+
+sns.pairplot(iris_data, kind="scatter", hue=species)
+
+#sns.pairplot(diris_data, kind='scatter')
+plt.show()
+'''
+
 
 '''
 fig, (ax1, ax2, ax3, ax4) = plt.subplots(nrows=2, ncols=2)
@@ -32,7 +50,7 @@ plt.show()
 '''
 
 
-
+'''
 # Write function which outputs scatterplot with each species coloured individually
 # Code found on stackoverflow.com (see references)
 def irisScatter(data1, data2, species):
@@ -57,7 +75,7 @@ irisScatter(sep_len, pet_len, species)
 #irisScatter(pet_len, pet_width, species)
 
 #plt.show()
-
+'''
 
 
 '''
