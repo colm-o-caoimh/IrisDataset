@@ -100,12 +100,16 @@ var_hist2(species, 5, 'species', 'count', 'Iris Species', 'species.png')
 # C. Output a scatter plot of each pair of variables
 
 
-
+# Write a fucntion which outputs a scatter plot of each pair of variables.
+# Each categorical variable (sepcies of iris flower) is denoted according to colour
 def scatter(x, y):
     sns.set(style="darkgrid")
     sns.lmplot(x, y, iris_data, fit_reg=False, hue='species')
     plt.show()
+    plt.close()
 
+    
+# Call functin for each pair of variables
 scatter('sepal_length', 'sepal_width',)
 scatter('sepal_length', 'petal_length',)
 scatter('sepal_length', 'petal_width',)
@@ -114,12 +118,5 @@ scatter('sepal_width', 'petal_width',)
 scatter('petal_length', 'petal_width')
 
 
-# Create scatter plot with seaborn. colour by categorical variable
-#sns.set(style="darkgrid")
-#sns.lmplot(x='sepal_length', y='sepal_width', data=iris_data, fit_reg=False, hue='species')
-#plt.show()
-
-#sns.pairplot(iris_data, kind="scatter", hue='species')
-
-#sns.pairplot(data=iris_data, kind='scatter')
-#plt.show()
+sns.pairplot(iris_data, kind="scatter", hue='species')
+plt.show()
