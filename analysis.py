@@ -10,7 +10,7 @@ import seaborn as sns
 iris_data = pd.read_csv('iris.data', header=None)
 
 # View first 10 rows of dataset
-print(iris_data.head(10))
+#print(iris_data.head(10))
 
 # assign column headers
 iris_data.columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
@@ -76,6 +76,7 @@ def var_hist(var_data, fig_num, x_label, y_label, title, filepath):
     plt.title(title)
     plt.hist(var_data, bins=20, rwidth=0.9,)
     plt.savefig(filepath)
+    plt.close()
 
 # Then for string variable 
 def var_hist2(var_data, fig_num, x_label, y_label, title, filepath):
@@ -85,6 +86,7 @@ def var_hist2(var_data, fig_num, x_label, y_label, title, filepath):
     plt.title(title)
     plt.hist(var_data, bins=3, rwidth=0.9)
     plt.savefig(filepath)
+    plt.close()
 
 # Call function for each variable
 var_hist(sep_len, 1, 'sepal_length_cm', 'count', 'Sepal Length', 'sepal_length.png')
@@ -99,12 +101,25 @@ var_hist2(species, 5, 'species', 'count', 'Iris Species', 'species.png')
 
 
 
+def scatter(x, y):
+    sns.set(style="darkgrid")
+    sns.lmplot(x, y, iris_data, fit_reg=False, hue='species')
+    plt.show()
+
+scatter('sepal_length', 'sepal_width',)
+scatter('sepal_length', 'petal_length',)
+scatter('sepal_length', 'petal_width',)
+scatter('sepal_width', 'petal_length',)
+scatter('sepal_width', 'petal_width',)
+scatter('petal_length', 'petal_width')
+
+
 # Create scatter plot with seaborn. colour by categorical variable
-sns.set_style("darkgrid")
-sns.lmplot(x='sepal_length', y='sepal_width', data=iris_data, fit_reg=False, hue='species')
+#sns.set(style="darkgrid")
+#sns.lmplot(x='sepal_length', y='sepal_width', data=iris_data, fit_reg=False, hue='species')
 #plt.show()
 
 #sns.pairplot(iris_data, kind="scatter", hue='species')
 
 #sns.pairplot(data=iris_data, kind='scatter')
-plt.show()
+#plt.show()
