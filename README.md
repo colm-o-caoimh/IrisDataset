@@ -10,7 +10,7 @@ Studio Code.
 in the fields of machine learning and statistics. It is referenced in
 numerous academic publications, student projects, online tutorials etc. so there
 is no shortage of sources offering the file for download. The most commonly 
-referenced source appeared to be the UCI (University of California Irvine) website,
+referenced source appeared to be the UCI (University of California Irvine) [website] (https://archive.ics.uci.edu/ml/datasets/Iris),
 whose machine learning repository offers the data set for download, amongst many others.
 It is this source that I have used in this project.
 
@@ -21,7 +21,7 @@ presented in Fisher's original paper. This is noted in the dataset documentation
 * The data was collected by Edgar Anderson and introduced by Ronald A. Fisher in his
 paper "The use of multiple measurements in taxonomic problems" in 1936. According
 to the UCI website, the paper "... is a classic in the field [of pattern recognition]
-and is referenced frequently to this day"
+and is referenced frequently to this day" **(REF)**
 
 * A multivariate data set, it contains a total of 150 instances consisting of 50 instances
 of each of 3 classes: *Iris-setosa*, *Iris-virginica* and *Iris-versicolor*. These refer
