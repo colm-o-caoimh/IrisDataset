@@ -10,7 +10,7 @@ Studio Code.
 in the fields of machine learning and statistics. It is referenced in
 numerous academic publications, student projects, online tutorials etc. so there
 is no shortage of sources offering the file for download. The most commonly 
-referenced source appeared to be the UCI (University of California Irvine) [website] (https://archive.ics.uci.edu/ml/datasets/Iris),
+referenced source appeared to be the UCI (University of California Irvine) [website](https://archive.ics.uci.edu/ml/datasets/Iris),
 whose machine learning repository offers the data set for download, amongst many others.
 It is this source that I have used in this project.
 
