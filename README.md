@@ -55,22 +55,24 @@ However I eventually used Pandas to load the data for analysis:
 
 `iris_data = pd.read_csv('iris.data', header=None)`
 
-This loads the data as a DataFrame which enables easier manipulation throughout the program.
+This loads the data as a DataFrame which enables easier manipulation throughout the program. In addition,
+I found Pandas' handling of string objects to be more intuitive than NumPy's.
+
 
 ## Investigating the data
 I found the quickest and most effective way to perform initial investigation on the data was to set 
 up an interactive environment with ipython:
 
-**Shape:**
+**Number of rows and columns:**
 
-```
+```javascript
 In [10]: iris_data.shape
 Out[10]: (150, 5)
 ```
 
 **First five and last five rows:**
 
-```
+```javascript
 In [11]: iris_data.head                                                 
 Out[11]:                                                                
 <bound method NDFrame.head of        0    1    2    3               4   
@@ -91,7 +93,7 @@ Out[11]:
 
 **Display data type of each column:**
 
-```
+```javascript
 In [12]: iris_data.info()
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 150 entries, 0 to 149
@@ -105,5 +107,68 @@ dtypes: float64(4), object(1)
 memory usage: 6.0+ KB
 ```
 
+## Summary of each variable
+* Following initial investigation above, we know that of the five variables in the data set,
+4 contain float values. These represent the attributes of each of the 3 classes. The fifth
+variable contains string values, displayed above as an `object`. 
+
+* In order to provide a summary of each variable, I used the **Five-Number Summary** as a
+basic framework. Mathematician John Tukey is credited with having first recommended its usage
+in the analysis of a data set **(REF)**. It involves calculating the minimum, 1st quartile, 
+median, 3rd quartile and maximum of a data set in order to describe its distribution.
+
+* I first grouped the variables according to data type:
+
+```javascript
+# Isolate columns according to data type
+float_values = iris_data.iloc[:,0:4]
+str_values = iris_data.iloc[:,4]
+```
+
+* For the numeric data, I initially calculated each statistic using the `max()`, `min()` and `median()` functions before 
+applying NumPy's `percentile()` function to the data. I subsequently discovered Pandas `describe()`
+function **(REF)** which outputs a DataFrame containing the relevant statistical information:
+
+```javascript
+# Use describe() function to summarise data
+float_summary = float_values.describe()
+str_summary = str_values.describe()
+```
+
+**Output:**
+
+```
+       sepal_length  sepal_width  petal_length  petal_width 
+count    150.000000   150.000000    150.000000   150.000000 
+mean       5.843333     3.054000      3.758667     1.198667 
+std        0.828066     0.433594      1.764420     0.763161 
+min        4.300000     2.000000      1.000000     0.100000 
+25%        5.100000     2.800000      1.600000     0.300000 
+50%        5.800000     3.000000      4.350000     1.300000 
+75%        6.400000     3.300000      5.100000     1.800000 
+max        7.900000     4.400000      6.900000     2.500000 
+```
 
 
+* For the dependent variable summary, I used `describe()` once more. A number of additional steps
+were needed to output the information in the same tabular format as above (see analysis.py above). 
+`str_summary.unique()` creates an `nparray` of each of target variable. This array was then 
+converted to a DataFrame to get the desired format for output:
+
+```
+                   Species Count
+Species_A      Iris-setosa    50
+Species_B  Iris-versicolor    50
+Species_C   Iris-virginica    50
+```
+
+
+
+
+
+
+
+
+
+
+ 

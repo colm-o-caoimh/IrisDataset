@@ -16,25 +16,26 @@ iris_data = pd.read_csv('iris.data', header=None)
 # View first 10 rows
 #print(iris_data.head(10))
 
-
-print(iris_data.info())
+# Display data types of each column
+#print(iris_data.info())
 
 # assign column headers
 iris_data.columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
 
-# Isolate columns according to variable and data type
-float_values = iris_data.iloc[:,0:4]
-str_values = iris_data.iloc[:,4]
 
-'''
+
+
 
 # A. Output a summary of each variable to a single txt file.
 
-
+# Isolate columns according to data type
+float_values = iris_data.iloc[:,0:4]
+str_values = iris_data.iloc[:,4]
 
 # Use describe() function to summarise data
 float_summary = float_values.describe()
 str_summary = str_values.describe()
+
 
 # Establish 3 unique values in str_summary.
 # This creates an array of each value.
@@ -52,6 +53,9 @@ str_summary['Count'] = quantity
 # Rename rows in str_summary
 str_summary.index = ['Species_A', 'Species_B', 'Species_C']
 
+print(str_summary)
+
+'''
 # Format summary output and write to text file
 with open("iris_summary.txt", "w") as f:
     heading = "SUMMARY OF VARIABLES IN IRIS DATASET" 
