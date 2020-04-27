@@ -9,8 +9,15 @@ import seaborn as sns
 # Import data as pandas dataframe
 iris_data = pd.read_csv('iris.data', header=None)
 
-# View first 10 rows of dataset
+# Investiate data set
+# Output shape
+#print(iris_data.shape)
+
+# View first 10 rows
 #print(iris_data.head(10))
+
+
+print(iris_data.info())
 
 # assign column headers
 iris_data.columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
@@ -19,7 +26,7 @@ iris_data.columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width
 float_values = iris_data.iloc[:,0:4]
 str_values = iris_data.iloc[:,4]
 
-
+'''
 
 # A. Output a summary of each variable to a single txt file.
 
@@ -120,3 +127,4 @@ scatter('petal_length', 'petal_width')
 
 sns.pairplot(iris_data, kind="scatter", hue='species')
 plt.show()
+'''
