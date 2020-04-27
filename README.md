@@ -63,12 +63,12 @@ up an interactive environment with ipython:
 
 **Shape:**
 
-`In [10]: iris_data.shape
-Out[10]: (150, 5)`
+```In [10]: iris_data.shape
+Out[10]: (150, 5)```
 
 **First five and last five rows:**
 
-`In [11]: iris_data.head                                                 
+```In [11]: iris_data.head                                                 
 Out[11]:                                                                
 <bound method NDFrame.head of        0    1    2    3               4   
 0    5.1  3.5  1.4  0.2     Iris-setosa                                 
@@ -83,11 +83,11 @@ Out[11]:
 148  6.2  3.4  5.4  2.3  Iris-virginica                                 
 149  5.9  3.0  5.1  1.8  Iris-virginica                                 
                                                                         
-[150 rows x 5 columns]>`                                                 
+[150 rows x 5 columns]>```                                                 
 
 **Display data type of each column:**
 
-`In [12]: iris_data.info()
+```In [12]: iris_data.info()
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 150 entries, 0 to 149
 Data columns (total 5 columns):
@@ -97,7 +97,7 @@ Data columns (total 5 columns):
 3    150 non-null float64
 4    150 non-null object
 dtypes: float64(4), object(1)
-memory usage: 6.0+ KB`
+memory usage: 6.0+ KB```
 
 
 
