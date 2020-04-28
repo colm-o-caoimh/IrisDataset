@@ -196,8 +196,14 @@ def var_hist(var_data, fig_num, x_label, y_label, title, filepath):
     plt.close() # Close figure so plot won't be displayed later
 ```
 
+![Sepal Length](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/sepal_length.png)
+![Sepal Width](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/sepal_width.png)
+![Petal Length](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/petal_length.png)
+![Petal Width](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/petal_width.png)
+
+
 The second function generates a histogram representing the 3 unique values of the target variable (see *analysis.py*)
 
-![Sepal Length](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/sepal_length.png)
+
 
  
