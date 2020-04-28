@@ -67,13 +67,17 @@ up an interactive environment with ipython:
 
 ```python
 In [10]: iris_data.shape
+```
+```
 Out[10]: (150, 5)
 ```
 
 **First five and last five rows:**
 
+```python
+In [11]: iris_data.head
 ```
-In [11]: iris_data.head                                                 
+```                                                 
 Out[11]:                                                                
 <bound method NDFrame.head of        0    1    2    3               4   
 0    5.1  3.5  1.4  0.2     Iris-setosa                                 
@@ -154,11 +158,11 @@ max        7.900000     4.400000      6.900000     2.500000
 * From this table we can deduce that the sepal is larger in size than the petal on average.
 We can also observe trends in the standard deviation, where there appears to be
 a broad symmetry with regard to the length and width of each part of the flower. More detailed 
-exploration below will provide further information and a deeper understanding of the data
+exploration below will provide further information and a deeper understanding.
 
 
 * For the dependent variable summary, I used `describe()` once more. A number of additional steps
-were needed to output the information in the same tabular format as above (see analysis.py above). 
+were needed to output the information in the same tabular format as above (see *analysis.py*). 
 `str_summary.unique()` creates an `nparray` of each of target variable. This array was then 
 converted to a DataFrame to get the desired format for output:
 
@@ -194,6 +198,6 @@ def var_hist(var_data, fig_num, x_label, y_label, title, filepath):
 
 The second function generates a histogram representing the 3 unique values of the target variable (see *analysis.py*)
 
-
+![Sepal Length](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/sepal_length.png)
 
  
