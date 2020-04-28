@@ -231,15 +231,16 @@ function is based on a solution I found here **(REF)**:
 
 
 ```python
+# Function to assign colour to each target variable 
 def irisScatter(data1, data2, catcol):
-    #fig, ax = plt.subplots()
     categories = np.unique(catcol)
     colors = np.linspace(0, 1, len(categories))
     colordict = dict(zip(categories, colors))
     catcol = catcol.apply(lambda x: colordict[x])
     fig = plt.scatter(data1, data2, c=catcol)
     return fig
- 
+
+# Call function
 irisScatter(sep_len, sep_width, species)
 ```
 
