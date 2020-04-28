@@ -74,7 +74,7 @@ pet_len = iris_data['petal_length']
 pet_width = iris_data['petal_width']
 species = iris_data['species']
 
-
+'''
 # Write a function which outputs a histogram for each dataset variable and saves
 # it as a png file.
 # First for numeric variables
@@ -112,22 +112,29 @@ var_hist2(species, 5, 'species', 'Frequency', 'Iris Species', 'species.png')
 
 # Write a fucntion which outputs a scatter plot of each pair of variables.
 # Each categorical variable (sepcies of iris flower) is denoted according to colour
-def scatter(x, y):
+def scatter(x, y, filepath):
     sns.set(style="darkgrid")
     sns.lmplot(x, y, iris_data, fit_reg=False, hue='species')
-    plt.show()
+    #plt.show()
+    plt.savefig(filepath)
     plt.close()
 
     
-# Call functin for each pair of variables
-scatter('sepal_length', 'sepal_width',)
-scatter('sepal_length', 'petal_length',)
-scatter('sepal_length', 'petal_width',)
-scatter('sepal_width', 'petal_length',)
-scatter('sepal_width', 'petal_width',)
-scatter('petal_length', 'petal_width')
+# Call function for each pair of variables
+scatter('sepal_length', 'sepal_width', './image_uploads/fig1.png')
+scatter('sepal_length', 'petal_length', './image_uploads/fig.png')
+scatter('sepal_length', 'petal_width', './image_uploads/fig3.png')
+scatter('sepal_width', 'petal_length', './image_uploads/fig4.png')
+scatter('sepal_width', 'petal_width', './image_uploads/fig5.png')
+scatter('petal_length', 'petal_width', './image_uploads/fig6.png')
 
 
-sns.pairplot(iris_data, kind="scatter", hue='species')
-plt.show()
-'''
+#sns.pairplot(iris_data, kind="scatter", hue='species')
+#plt.show()
+
+
+plt.scatter(sep_len, sep_width)
+plt.xlabel('sepal_length')
+plt.ylabel('sepal_width')
+plt.savefig('./image_uploads/scatter1.png')
+#plt.show()
