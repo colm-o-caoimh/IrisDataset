@@ -152,9 +152,10 @@ max        7.900000     4.400000      6.900000     2.500000
 ```
 
 * From this table we can deduce that the sepal is larger in size than the petal on average.
-When comparing the length and width of the sepal and petal, we observe a symmetry with regard
-to the stadard deviation - lower for the sepal, higher for the petal. More detailed exploration 
-below will further enlighten us.
+We can also observe trends in the standard deviation, where there appears to be
+a broad symmetry with regard to the length and width of each part of the flower. More detailed 
+exploration below will provide further information and a deeper understanding of the data
+
 
 * For the dependent variable summary, I used `describe()` once more. A number of additional steps
 were needed to output the information in the same tabular format as above (see analysis.py above). 
@@ -168,18 +169,30 @@ Species_B  Iris-versicolor    50
 Species_C   Iris-virginica    50
 ```
 
-* This output was further formatted and written to a txt file. (see **iris_summary.txt** above)
+* The summary output was further formatted and written to a txt file. (see *iris_summary.txt*)
 
 ## Histogram
 
 * Histograms are a useful way to visualise and assess the probability distribution of a data sample. **(REF)**
 Python offers a number of different options to generate a histogram, from pure python to third party libraries
 such as NumPy, Seaborn and Pandas. For this project, I decided to use Matplotlib. The `hist()` function is
-simple to use, needing only one line of code to output a graphical representation. 
+simple to use, needing only one line of code to output an informative graphical representation. 
 
-* 
+* To generate a histogram of each variable, I wrote two functions, both of which also saves each figure as a 
+png file. The first processes the numeric data:
 
+``` python
+def var_hist(var_data, fig_num, x_label, y_label, title, filepath):
+    plt.figure(fig_num)
+    plt.xlabel(x_label)
+    plt.ylabel(y_label)
+    plt.title(title)
+    plt.hist(var_data, bins=None, rwidth=0.9,)
+    plt.savefig(filepath)
+    plt.close() # Close figure so plot won't be displayed later
+```
 
+The second function generates a histogram representing the 3 unique values of the target variable (see *analysis.py*)
 
 
 
