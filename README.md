@@ -65,14 +65,14 @@ up an interactive environment with ipython:
 
 **Number of rows and columns:**
 
-```javascript
+```python
 In [10]: iris_data.shape
 Out[10]: (150, 5)
 ```
 
 **First five and last five rows:**
 
-```javascript
+```
 In [11]: iris_data.head                                                 
 Out[11]:                                                                
 <bound method NDFrame.head of        0    1    2    3               4   
@@ -93,8 +93,10 @@ Out[11]:
 
 **Display data type of each column:**
 
-```javascript
+```python
 In [12]: iris_data.info()
+```
+```
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 150 entries, 0 to 149
 Data columns (total 5 columns):
@@ -119,7 +121,7 @@ median, 3rd quartile and maximum of a data set in order to describe its distribu
 
 * I first grouped the variables according to data type:
 
-```javascript
+```python
 # Isolate columns according to data type
 float_values = iris_data.iloc[:,0:4]
 str_values = iris_data.iloc[:,4]
@@ -129,8 +131,8 @@ str_values = iris_data.iloc[:,4]
 applying NumPy's `percentile()` function to the data. I subsequently discovered Pandas `describe()`
 function **(REF)** which outputs a DataFrame containing the relevant statistical information:
 
-```javascript
-# Use describe() function to summarise data
+```python
+# Use describe function to summarise data
 float_summary = float_values.describe()
 str_summary = str_values.describe()
 ```

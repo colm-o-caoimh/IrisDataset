@@ -32,7 +32,7 @@ iris_data.columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width
 float_values = iris_data.iloc[:,0:4]
 str_values = iris_data.iloc[:,4]
 
-# Use describe() function to summarise data
+# Use describe function to summarise data
 float_summary = float_values.describe()
 str_summary = str_values.describe()
 
@@ -53,9 +53,7 @@ str_summary['Count'] = quantity
 # Rename rows in str_summary
 str_summary.index = ['Species_A', 'Species_B', 'Species_C']
 
-print(str_summary)
 
-'''
 # Format summary output and write to text file
 with open("iris_summary.txt", "w") as f:
     heading = "SUMMARY OF VARIABLES IN IRIS DATASET" 
@@ -65,7 +63,7 @@ with open("iris_summary.txt", "w") as f:
     f.write(str_summary.to_string())
 
 
-
+'''
 # B. Save a histogram of each variable to png files
 
 
