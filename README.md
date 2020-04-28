@@ -214,8 +214,34 @@ The second function is almost identical and generates a histogram representing t
 
 ![Species](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/species.png)
 
- 
 
+## Scatter plot
+* A scatter plot shows the relationship between two variables in a dataset by plotting each 
+observation and representing them as dots. The resulting patterns can be very informative,
+"... [indicating] the type and strength of the relationship between the two variables." **(REF)**
+
+* I initially generated scatter plots using Matpotlib's `scatter()` function. However, while the 
+pattern is informative, highlighting marked trends in the data, it does not distinguish between
+the categorical variables and so does not tell us the whole story:
+
+![Scatter_1](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/scatter1.png)
+
+* With Matplotlib, distinguishing each categorical variable by colour involves a number of steps. This
+function is based on a solution I found here **(REF)**:
+
+
+```python
+def irisScatter(data1, data2, catcol):
+    #fig, ax = plt.subplots()
+    categories = np.unique(catcol)
+    colors = np.linspace(0, 1, len(categories))
+    colordict = dict(zip(categories, colors))
+    catcol = catcol.apply(lambda x: colordict[x])
+    fig = plt.scatter(data1, data2, c=catcol)
+    return fig
+ 
+irisScatter(sep_len, sep_width, species)
+```
 
 
  
