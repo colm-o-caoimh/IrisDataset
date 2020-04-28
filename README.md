@@ -184,10 +184,11 @@ simple to use, needing only one line of code to output an informative graphical 
 
 * To generate a histogram of each variable, I wrote two functions, both of which also save each figure as a 
 png file. The first processes the numeric data:
+
 **note:** I have used the default binning strategy (10 bins) however 
 Matplotlib's `hist()` function provides the option of additional binning strategies such as 'auto', 'sturges',
-'doane' etc. These refer to alternative formulas which offer a different perspective on the data 
-(see Matplotlib [documentation](https://matplotlib.org/3.1.3/api/_as_gen/matplotlib.pyplot.hist.html):
+'doane' etc. These refer to alternative formulas which offer a different perspective on the data. 
+(see Matplotlib [documentation](https://matplotlib.org/3.1.3/api/_as_gen/matplotlib.pyplot.hist.html))
 
 ``` python
 def var_hist(var_data, fig_num, x_label, y_label, title, filepath):
