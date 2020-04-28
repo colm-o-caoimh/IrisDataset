@@ -25,7 +25,7 @@ iris_data.columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width
 
 
 
-
+'''
 # A. Output a summary of each variable to a single txt file.
 
 # Isolate columns according to data type
@@ -61,9 +61,9 @@ with open("iris_summary.txt", "w") as f:
     f.write("=" * len(heading) + "\n\n")
     f.write(float_summary.to_string() + "\n\n")
     f.write(str_summary.to_string())
-
-
 '''
+
+
 # B. Save a histogram of each variable to png files
 
 
@@ -83,7 +83,7 @@ def var_hist(var_data, fig_num, x_label, y_label, title, filepath):
     plt.xlabel(x_label)
     plt.ylabel(y_label)
     plt.title(title)
-    plt.hist(var_data, bins=20, rwidth=0.9,)
+    plt.hist(var_data, bins=None, rwidth=0.9,)
     plt.savefig(filepath)
     plt.close()
 
@@ -98,14 +98,14 @@ def var_hist2(var_data, fig_num, x_label, y_label, title, filepath):
     plt.close()
 
 # Call function for each variable
-var_hist(sep_len, 1, 'sepal_length_cm', 'count', 'Sepal Length', 'sepal_length.png')
-var_hist(sep_width, 2, 'sepal_width_cm', 'count', 'Sepal Width', 'sepal_width.png')
-var_hist(pet_len, 3, 'petal_length_cm', 'count', 'Petal Length', 'petal_length.png')
-var_hist(pet_width, 4, 'petal_width_cm', 'count', 'Petal Width', 'petal_width.png')
-var_hist2(species, 5, 'species', 'count', 'Iris Species', 'species.png')
+var_hist(sep_len, 1, 'sepal_length_cm', 'Frequency', 'Sepal Length', 'sepal_length.png')
+var_hist(sep_width, 2, 'sepal_width_cm', 'Frequency', 'Sepal Width', 'sepal_width.png')
+var_hist(pet_len, 3, 'petal_length_cm', 'Frequency', 'Petal Length', 'petal_length.png')
+var_hist(pet_width, 4, 'petal_width_cm', 'Frequency', 'Petal Width', 'petal_width.png')
+var_hist2(species, 5, 'species', 'Frequency', 'Iris Species', 'species.png')
 
 
-
+'''
 # C. Output a scatter plot of each pair of variables
 
 

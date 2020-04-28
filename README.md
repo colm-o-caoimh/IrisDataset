@@ -151,6 +151,10 @@ min        4.300000     2.000000      1.000000     0.100000
 max        7.900000     4.400000      6.900000     2.500000 
 ```
 
+* From this table we can deduce that the sepal is larger in size than the petal on average.
+When comparing the length and width of the sepal and petal, we observe a symmetry with regard
+to the stadard deviation - lower for the sepal, higher for the petal. More detailed exploration 
+below will further enlighten us.
 
 * For the dependent variable summary, I used `describe()` once more. A number of additional steps
 were needed to output the information in the same tabular format as above (see analysis.py above). 
@@ -164,10 +168,16 @@ Species_B  Iris-versicolor    50
 Species_C   Iris-virginica    50
 ```
 
+* This output was further formatted and written to a txt file. (see **iris_summary.txt** above)
 
+## Histogram
 
+* Histograms are a useful way to visualise and assess the probability distribution of a data sample. **(REF)**
+Python offers a number of different options to generate a histogram, from pure python to third party libraries
+such as NumPy, Seaborn and Pandas. For this project, I decided to use Matplotlib. The `hist()` function is
+simple to use, needing only one line of code to output a graphical representation. 
 
-
+* 
 
 
 
