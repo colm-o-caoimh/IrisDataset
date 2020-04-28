@@ -182,8 +182,12 @@ Python offers a number of different options to generate a histogram, from pure p
 such as NumPy, Seaborn and Pandas. For this project, I decided to use Matplotlib. The `hist()` function is
 simple to use, needing only one line of code to output an informative graphical representation. 
 
-* To generate a histogram of each variable, I wrote two functions, both of which also saves each figure as a 
+* To generate a histogram of each variable, I wrote two functions, both of which also save each figure as a 
 png file. The first processes the numeric data:
+**note:** I have used the default binning strategy (10 bins) however 
+Matplotlib's `hist()` function provides the option of additional binning strategies such as 'auto', 'sturges',
+'doane' etc. These refer to alternative formulas which offer a different perspective on the data 
+(see Matplotlib [documentation](https://matplotlib.org/3.1.3/api/_as_gen/matplotlib.pyplot.hist.html):
 
 ``` python
 def var_hist(var_data, fig_num, x_label, y_label, title, filepath):
@@ -191,10 +195,12 @@ def var_hist(var_data, fig_num, x_label, y_label, title, filepath):
     plt.xlabel(x_label)
     plt.ylabel(y_label)
     plt.title(title)
-    plt.hist(var_data, bins=None, rwidth=0.9,)
+    plt.hist(var_data, rwidth=0.9,)
     plt.savefig(filepath)
     plt.close() # Close figure so plot won't be displayed later
 ```
+
+This function outputs the following histograms:
 
 ![Sepal Length](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/sepal_length.png)
 ![Sepal Width](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/sepal_width.png)
@@ -202,7 +208,12 @@ def var_hist(var_data, fig_num, x_label, y_label, title, filepath):
 ![Petal Width](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/petal_width.png)
 
 
-The second function generates a histogram representing the 3 unique values of the target variable (see *analysis.py*)
+The second function is almost identical and generates a histogram representing the
+3 unique values of the target variable (see *analysis.py*):
+
+![Species](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/species.png)
+
+ 
 
 
 

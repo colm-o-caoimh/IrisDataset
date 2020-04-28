@@ -83,9 +83,9 @@ def var_hist(var_data, fig_num, x_label, y_label, title, filepath):
     plt.xlabel(x_label)
     plt.ylabel(y_label)
     plt.title(title)
-    plt.hist(var_data, bins=None, rwidth=0.9,)
+    plt.hist(var_data, rwidth=0.9,)
     plt.savefig(filepath)
-    plt.close()
+    plt.close() # Close figure so plot won't be displayed later
 
 # Then for string variable 
 def var_hist2(var_data, fig_num, x_label, y_label, title, filepath):
@@ -94,6 +94,7 @@ def var_hist2(var_data, fig_num, x_label, y_label, title, filepath):
     plt.ylabel(y_label)
     plt.title(title)
     plt.hist(var_data, bins=3, rwidth=0.9)
+    plt.xticks(np.arange(0,3))
     plt.savefig(filepath)
     plt.close()
 
