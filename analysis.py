@@ -9,29 +9,19 @@ import seaborn as sns
 # Import data as pandas dataframe
 iris_data = pd.read_csv('iris.data', header=None)
 
-# Investiate data set
-# Output shape
-#print(iris_data.shape)
-
-# View first 10 rows
-#print(iris_data.head(10))
-
-# Display data types of each column
-#print(iris_data.info())
-
 # assign column headers
 iris_data.columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
 
 
 
-
-
 # A. Output a summary of each variable to a single txt file.
+
+
 
 # Isolate columns according to data type
 float_values = iris_data.iloc[:,0:4]
 str_values = iris_data.iloc[:,4]
-'''
+
 # Use describe function to summarise data
 float_summary = float_values.describe()
 str_summary = str_values.describe()
@@ -61,10 +51,11 @@ with open("iris_summary.txt", "w") as f:
     f.write("=" * len(heading) + "\n\n")
     f.write(float_summary.to_string() + "\n\n")
     f.write(str_summary.to_string())
-'''
+
 
 
 # B. Save a histogram of each variable to png files
+
 
 
 # Assign each column to a variable for easier manipulation
@@ -74,7 +65,7 @@ pet_len = iris_data['petal_length']
 pet_width = iris_data['petal_width']
 species = iris_data['species']
 
-'''
+
 # Write a function which outputs a histogram for each dataset variable and saves
 # it as a png file.
 # First for numeric variables
@@ -131,10 +122,19 @@ axs4.set(ylabel='frequency')
 
 
 #plt.show()
-'''
+plt.close()
 
-'''
+
+
 # C. Output a scatter plot of each pair of variables
+
+
+# Scatter plot with matplotlib (no colour separation)
+plt.scatter(sep_len, sep_width)
+plt.xlabel('sepal_length')
+plt.ylabel('sepal_width')
+#plt.show()
+plt.close()
 
 
 # Write a function which outputs a scatter plot of each pair of variables.
@@ -143,7 +143,6 @@ def scatter(x, y):
     sns.set(style="darkgrid")
     sns.lmplot(x, y, iris_data, fit_reg=False, hue='species')
     plt.show()
-    #plt.savefig(filepath)
     plt.close()
 
     
@@ -155,17 +154,9 @@ scatter('sepal_width', 'petal_length')
 scatter('sepal_width', 'petal_width')
 scatter('petal_length', 'petal_width')
 
-'''
+
 # Output pairplot using kde to represent marginal distribution
 sns.set(style='ticks', color_codes=True)
 sns.pairplot(iris_data, hue='species', diag_kind='kde')
 plt.show()
 
-'''
-plt.scatter(sep_len, sep_width)
-plt.xlabel('sepal_length')
-plt.ylabel('sepal_width')
-plt.savefig('./image_uploads/scatter1.png')
-#plt.show()
-'''
-'./image_uploads/fig1.png'

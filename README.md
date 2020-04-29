@@ -297,6 +297,10 @@ plt.show()
 
 ![Pairplot](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/pairplot.png)
 
+* From this we get an insightful overview of the data set, combining the various plots used in this project into one
+single figure. The KDE (Kernal Density Estimation) serves as "... a way to estimate the probability density 
+function of a continuous random variable" **(REF)**.
+
 
 
 
