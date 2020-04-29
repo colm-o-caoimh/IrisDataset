@@ -104,9 +104,9 @@ var_hist(sep_width, 2, 'sepal_width_cm', 'Frequency', 'Sepal Width', 'sepal_widt
 var_hist(pet_len, 3, 'petal_length_cm', 'Frequency', 'Petal Length', 'petal_length.png')
 var_hist(pet_width, 4, 'petal_width_cm', 'Frequency', 'Petal Width', 'petal_width.png')
 var_hist2(species, 5, 'species', 'Frequency', 'Iris Species', 'species.png')
-'''
 
 
+# 4 axes on one figure for better visual comparison
 fig, axs = plt.subplots(2, 2)
 
 axs1 = axs[0, 0]
@@ -130,31 +130,31 @@ axs4.set_title('Petal_Width_Cm')
 axs4.set(ylabel='frequency')
 
 
-plt.show()
-
-
+#plt.show()
 '''
+
+
 # C. Output a scatter plot of each pair of variables
 
 
 # Write a function which outputs a scatter plot of each pair of variables.
 # Each categorical variable (species of iris flower) is categorized by colour
-def scatter(x, y, filepath):
+def scatter(x, y):
     sns.set(style="darkgrid")
     sns.lmplot(x, y, iris_data, fit_reg=False, hue='species')
     plt.show()
-    plt.savefig(filepath)
+    #plt.savefig(filepath)
     plt.close()
 
     
 # Call function for each pair of variables
-scatter('sepal_length', 'sepal_width', './image_uploads/fig1.png')
-scatter('sepal_length', 'petal_length', './image_uploads/fig.png')
-scatter('sepal_length', 'petal_width', './image_uploads/fig3.png')
-scatter('sepal_width', 'petal_length', './image_uploads/fig4.png')
-scatter('sepal_width', 'petal_width', './image_uploads/fig5.png')
-scatter('petal_length', 'petal_width', './image_uploads/fig6.png')
-'''
+scatter('sepal_length', 'sepal_width')
+scatter('sepal_length', 'petal_length')
+scatter('sepal_length', 'petal_width')
+scatter('sepal_width', 'petal_length')
+scatter('sepal_width', 'petal_width')
+scatter('petal_length', 'petal_width')
+
 
 #sns.set(style='ticks', color_codes=True)
 #sns.pairplot(iris_data, hue='species', diag_kind='kde')
@@ -167,3 +167,4 @@ plt.ylabel('sepal_width')
 plt.savefig('./image_uploads/scatter1.png')
 #plt.show()
 '''
+'./image_uploads/fig1.png'
