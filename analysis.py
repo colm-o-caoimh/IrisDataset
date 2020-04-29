@@ -107,7 +107,29 @@ var_hist2(species, 5, 'species', 'Frequency', 'Iris Species', 'species.png')
 '''
 
 
-float_values.hist(layout=(2, 2))
+fig, axs = plt.subplots(2, 2)
+
+axs1 = axs[0, 0]
+axs1.hist(sep_len, rwidth=0.9)
+axs1.set_title('Sepal_Length_Cm')
+axs1.set(ylabel='frequency')
+
+axs2 = axs[0, 1]
+axs2.hist(sep_width, rwidth=0.9)
+axs2.set_title('Sepal_Width_Cm')
+axs2.set(ylabel='frequency')
+
+axs3 = axs[1, 0]
+axs3.hist(pet_len, rwidth=0.9)
+axs3.set_title('Petal_Length_Cm')
+axs3.set(ylabel='frequency')
+
+axs4 = axs[1, 1]
+axs4.hist(pet_width, rwidth=0.9)
+axs4.set_title('Petal_Width_Cm')
+axs4.set(ylabel='frequency')
+
+
 plt.show()
 
 
