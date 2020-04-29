@@ -133,7 +133,7 @@ axs4.set(ylabel='frequency')
 #plt.show()
 '''
 
-
+'''
 # C. Output a scatter plot of each pair of variables
 
 
@@ -155,10 +155,11 @@ scatter('sepal_width', 'petal_length')
 scatter('sepal_width', 'petal_width')
 scatter('petal_length', 'petal_width')
 
-
-#sns.set(style='ticks', color_codes=True)
-#sns.pairplot(iris_data, hue='species', diag_kind='kde')
-#plt.show()
+'''
+# Output pairplot using kde to represent marginal distribution
+sns.set(style='ticks', color_codes=True)
+sns.pairplot(iris_data, hue='species', diag_kind='kde')
+plt.show()
 
 '''
 plt.scatter(sep_len, sep_width)

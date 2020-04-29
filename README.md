@@ -185,11 +185,6 @@ simple to use, needing only one line of code to output an informative graphical 
 * To generate a histogram of each variable, I wrote two functions, both of which also save each figure as a 
 png file. The first processes the numeric data:
 
-**note:** I have used the default binning strategy (10 bins) however 
-Matplotlib's `hist()` function provides the option of additional binning strategies such as 'auto', 'sturges',
-'doane' etc. These refer to alternative formulas which offer a different perspective on the data. 
-(see Matplotlib [documentation](https://matplotlib.org/3.1.3/api/_as_gen/matplotlib.pyplot.hist.html))
-
 ``` python
 def var_hist(var_data, fig_num, x_label, y_label, title, filepath):
     plt.figure(fig_num)
@@ -201,7 +196,12 @@ def var_hist(var_data, fig_num, x_label, y_label, title, filepath):
     plt.close() # Close figure so plot won't be displayed later
 ```
 
-This function outputs the following histograms:
+**note:** I have used the default binning strategy (10 bins) however 
+Matplotlib's `hist()` function provides the option of additional binning strategies such as 'auto', 'sturges',
+'doane' etc. These refer to alternative formulas which offer a different perspective on the data. 
+(see Matplotlib [documentation](https://matplotlib.org/3.1.3/api/_as_gen/matplotlib.pyplot.hist.html))
+
+**Output**:
 
 ![Sepal Length](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/sepal_length.png)
 ![Sepal Width](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/sepal_width.png)
@@ -210,9 +210,8 @@ This function outputs the following histograms:
 
 
 The second function is almost identical and generates a histogram representing the
-3 unique values of the target variable (see *analysis.py*):
-
-![Species](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/species.png)
+3 unique values of the target variable (see *analysis.py*). Graphical representation of this variable does not
+give us any additional information. It can be viewed above (see *species.png*) 
 
 * Comparison between each variable is easier when viewed as 4 separate axes on a single figure:
 
@@ -226,7 +225,7 @@ observation and representing them as dots. The resulting patterns can be very in
 "... [indicating] the type and strength of the relationship between the two variables." **(REF)**
 
 * I initially generated scatter plots using Matpotlib's `scatter()` function. However, while the 
-pattern is informative, highlighting trends in the data, it does not distinguish between
+pattern is informative and does highlight trends in the data, it does not distinguish between
 the categorical variables and so does not tell us the whole story:
 
 ![Scatter_1](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/scatter1.png)
