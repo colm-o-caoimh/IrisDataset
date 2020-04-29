@@ -21,7 +21,7 @@ presented in Fisher's original paper. This is noted in the dataset documentation
 * The data was collected by Edgar Anderson and introduced by Ronald A. Fisher in his
 paper "The use of multiple measurements in taxonomic problems" in 1936. According
 to the UCI website, the paper "... is a classic in the field [of pattern recognition]
-and is referenced frequently to this day" **(REF)**
+and is referenced frequently to this day" [[1]](#1)
 
 * A multivariate data set, it contains a total of 150 instances consisting of 50 instances
 of each of 3 classes: *Iris-setosa*, *Iris-virginica* and *Iris-versicolor*. These refer
@@ -379,6 +379,9 @@ plt.show()
 single figure. The KDE (Kernal Density Estimation) serves as "... a way to estimate the probability density 
 function of a continuous random variable" **(REF)**.
 
+## References
+<a id="1">[1]</a>
+UCI Machine Learning Repository, Iris Data Set: [https://archive.ics.uci.edu/ml/datasets/Iris]
 
 
 
