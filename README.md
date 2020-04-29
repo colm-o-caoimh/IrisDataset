@@ -221,7 +221,7 @@ observation and representing them as dots. The resulting patterns can be very in
 "... [indicating] the type and strength of the relationship between the two variables." **(REF)**
 
 * I initially generated scatter plots using Matpotlib's `scatter()` function. However, while the 
-pattern is informative, highlighting marked trends in the data, it does not distinguish between
+pattern is informative, highlighting trends in the data, it does not distinguish between
 the categorical variables and so does not tell us the whole story:
 
 ![Scatter_1](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/scatter1.png)
@@ -244,5 +244,38 @@ def irisScatter(data1, data2, catcol):
 irisScatter(sep_len, sep_width, species)
 ```
 
+* Seaborn offers a much neater option to do this with the `hue` parameter in the `lmplot()` function:
 
- 
+```python
+# Write a function which outputs a scatter plot of each pair of variables.
+# Each categorical variable (species of iris flower) is categorized by colour
+def scatter(x, y, filepath):
+    sns.set(style="darkgrid")
+    sns.lmplot(x, y, iris_data, fit_reg=False, hue='species')
+    plt.show()
+    plt.savefig(filepath)
+    plt.close()
+```
+
+**Output:**
+
+![Sepal Length, Sepal Width](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/fig1.png)
+![Sepal Length, Petal Length](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/fig.png)
+![Sepal Length, Petal Width](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/fig3.png)
+![Sepal Width, Petal Length](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/fig4.png)
+![Sepal Width, Petal Width](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/fig5.png)
+![Petal Length, Petal Width](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/fig6.png) 
+
+**Note:** There is quite a lot of discussion around the benefits of certain visualisation tools relative to others.
+Python offers a wide range of options through third party libraries and each has its merits depending on what
+one wants to achieve. The blog posts [here](https://towardsdatascience.com/matplotlib-vs-seaborn-vs-plotly-f2b79f5bddb)
+and [here](https://blog.magrathealabs.com/choosing-one-of-many-python-visualization-tools-7eb36fa5855f) helped
+to steer me in the right direction. 
+
+
+## Pairplot
+* Seaborn's `pairplot()` function generates a plot 
+
+
+
+

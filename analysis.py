@@ -25,13 +25,13 @@ iris_data.columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width
 
 
 
-'''
+
 # A. Output a summary of each variable to a single txt file.
 
 # Isolate columns according to data type
 float_values = iris_data.iloc[:,0:4]
 str_values = iris_data.iloc[:,4]
-
+'''
 # Use describe function to summarise data
 float_summary = float_values.describe()
 str_summary = str_values.describe()
@@ -104,18 +104,23 @@ var_hist(sep_width, 2, 'sepal_width_cm', 'Frequency', 'Sepal Width', 'sepal_widt
 var_hist(pet_len, 3, 'petal_length_cm', 'Frequency', 'Petal Length', 'petal_length.png')
 var_hist(pet_width, 4, 'petal_width_cm', 'Frequency', 'Petal Width', 'petal_width.png')
 var_hist2(species, 5, 'species', 'Frequency', 'Iris Species', 'species.png')
+'''
+
+
+float_values.hist(layout=(2, 2))
+plt.show()
 
 
 '''
 # C. Output a scatter plot of each pair of variables
 
 
-# Write a fucntion which outputs a scatter plot of each pair of variables.
-# Each categorical variable (sepcies of iris flower) is denoted according to colour
+# Write a function which outputs a scatter plot of each pair of variables.
+# Each categorical variable (species of iris flower) is categorized by colour
 def scatter(x, y, filepath):
     sns.set(style="darkgrid")
     sns.lmplot(x, y, iris_data, fit_reg=False, hue='species')
-    #plt.show()
+    plt.show()
     plt.savefig(filepath)
     plt.close()
 
@@ -127,14 +132,16 @@ scatter('sepal_length', 'petal_width', './image_uploads/fig3.png')
 scatter('sepal_width', 'petal_length', './image_uploads/fig4.png')
 scatter('sepal_width', 'petal_width', './image_uploads/fig5.png')
 scatter('petal_length', 'petal_width', './image_uploads/fig6.png')
+'''
 
-
-#sns.pairplot(iris_data, kind="scatter", hue='species')
+#sns.set(style='ticks', color_codes=True)
+#sns.pairplot(iris_data, hue='species', diag_kind='kde')
 #plt.show()
 
-
+'''
 plt.scatter(sep_len, sep_width)
 plt.xlabel('sepal_length')
 plt.ylabel('sepal_width')
 plt.savefig('./image_uploads/scatter1.png')
 #plt.show()
+'''
