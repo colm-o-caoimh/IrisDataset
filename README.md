@@ -196,11 +196,6 @@ def var_hist(var_data, fig_num, x_label, y_label, title, filepath):
     plt.close() # Close figure so plot won't be displayed later
 ```
 
-**note:** I have used the default binning strategy (10 bins) however 
-Matplotlib's `hist()` function provides the option of additional binning strategies such as 'auto', 'sturges',
-'doane' etc. These refer to alternative formulas which offer a different perspective on the data. 
-(see Matplotlib [documentation](https://matplotlib.org/3.1.3/api/_as_gen/matplotlib.pyplot.hist.html))
-
 **Output**:
 
 ![Sepal Length](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/sepal_length.png)
@@ -213,10 +208,15 @@ The second function is almost identical and generates a histogram representing t
 3 unique values of the target variable (see *analysis.py*). Graphical representation of this variable does not
 give us any additional information. It can be viewed above (see *species.png*) 
 
-* Comparison between each variable is easier when viewed as 4 separate axes on a single figure:
+Comparison between each variable is easier when viewed as 4 separate axes on a single figure:
 
 ![4 Histograms](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/4_hist.png)
 
+These histograms give us a clearer picture of the distribution of each attribute, building on the information extracted 
+from the summary. I have used the default binning strategy (10 bins) however 
+Matplotlib's `hist()` function provides the option of additional binning strategies such as 'auto', 'sturges',
+'doane' etc. These refer to alternative formulas which offer a different perspective on the data. 
+(see Matplotlib [documentation](https://matplotlib.org/3.1.3/api/_as_gen/matplotlib.pyplot.hist.html))
 
 
 ## Scatter plot
@@ -270,6 +270,11 @@ def scatter(x, y, filepath):
 ![Sepal Width, Petal Width](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/scatterE.png)
 ![Petal Length, Petal Width](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/scatterF.png) 
 
+When separated by colour, each species in the data set is visibly distinguishable. The setosa in particular has 
+characteristics which clearly mark it out from the the virginica and the versicolor, regardless of which two 
+variables are plotted. 
+
+
 **Note:** There is quite a lot of discussion around the benefits of certain visualisation tools relative to others.
 Python offers a wide range of options through third party libraries and each has its merits depending on what
 one wants to achieve. The blog posts [here](https://towardsdatascience.com/matplotlib-vs-seaborn-vs-plotly-f2b79f5bddb)
@@ -278,7 +283,21 @@ to steer me in the right direction.
 
 
 ## Pairplot
-* Seaborn's `pairplot()` function generates a plot 
+* Seaborn's `pairplot()` function allows us to view joint (scatter plots) and marginal (histogram or kde) distribution 
+in a single figure, using minimal lines of code:
+
+```python
+# Output pairplot using kde to represent marginal distribution
+sns.set(style='ticks', color_codes=True)
+sns.pairplot(iris_data, hue='species', diag_kind='kde')
+plt.show()
+```
+
+**Output:**
+
+![Pairplot](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/pairplot.png)
+
+
 
 
 
