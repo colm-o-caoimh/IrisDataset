@@ -8,10 +8,10 @@ Studio Code.
 ## Data search and download
 * Following a simple Google search, one quickly establishes that the Iris data set is used widely
 in the fields of machine learning and statistics. It is referenced in
-numerous academic publications, student projects, online tutorials etc. so there
+numerous academic publications, student projects, online tutorials etc. There
 is no shortage of sources offering the file for download. The most commonly 
-referenced source appeared to be the UCI (University of California Irvine) [website](https://archive.ics.uci.edu/ml/datasets/Iris),
-whose machine learning repository offers the data set for download, amongst many others.
+referenced source appears to be the UCI (University of California Irvine) [website](https://archive.ics.uci.edu/ml/datasets/Iris),
+whose machine learning repository offers the data set for download.
 It is this source that I have used in this project.
 
 * It is important to mention that the UCI data set differs slightly from the data 
@@ -31,7 +31,7 @@ measured by Anderson.
 
 ## Python Libraries
 **NumPy**: NumPy is roundly described as the fundamental package for scientific computing
-and data analysis with Python **(REF)**. Among numerous other important features it contains,
+and data analysis with Python **(REF)**. Among the numerous other important features it contains,
 NumPy's ndarray object allows for vectorized mathematical operations which is essential for 
 any investigation and analysis of data.
 
@@ -51,7 +51,7 @@ purpose of generating insightful scatter plots with minimal lines of code.
 
 ## Importing the data
 * Initial attempts to import the data involved using NumPy's `loadtxt()` and `genfromtxt()` functions.
-However I eventually used Pandas to load the data for analysis:
+However I eventually settled on Pandas:
 
 `iris_data = pd.read_csv('iris.data', header=None)`
 
@@ -162,9 +162,38 @@ exploration below will provide further information and a deeper understanding.
 
 
 * For the dependent variable summary, I used `describe()` once more. A number of additional steps
-were needed to output the information in the same tabular format as above (see *analysis.py*). 
+were needed to output the information in the same tabular format as above. 
 `str_summary.unique()` creates an `nparray` of each of target variable. This array was then 
 converted to a DataFrame to get the desired format for output:
+
+```python
+# Establish 3 unique values in str_summary.
+# This creates an array of each value.
+str_summary = str_values.unique()
+
+# Transpose str_summary array and convert to dataframe
+str_summary = str_summary[:, None]
+str_summary = pd.DataFrame({"Species": str_summary[:, 0]})
+
+# Format string variable summary
+# Add column containing quantity of unique values
+quantity = ['50', '50', '50']
+str_summary['Count'] = quantity
+
+# Rename rows in str_summary
+str_summary.index = ['Species_A', 'Species_B', 'Species_C']
+
+
+# Format summary output and write to text file
+with open("iris_summary.txt", "w") as f:
+    heading = "SUMMARY OF VARIABLES IN IRIS DATASET" 
+    f.write(heading + "\n")
+    f.write("=" * len(heading) + "\n\n")
+    f.write(float_summary.to_string() + "\n\n")
+    f.write(str_summary.to_string())
+```
+
+**output:**
 
 ```
                    Species Count
@@ -194,6 +223,13 @@ def var_hist(var_data, fig_num, x_label, y_label, title, filepath):
     plt.hist(var_data, rwidth=0.9,)
     plt.savefig(filepath)
     plt.close() # Close figure so plot won't be displayed later
+
+
+# Call function for each variable
+var_hist(sep_len, 1, 'sepal_length_cm', 'Frequency', 'Sepal Length', 'sepal_length.png')
+var_hist(sep_width, 2, 'sepal_width_cm', 'Frequency', 'Sepal Width', 'sepal_width.png')
+var_hist(pet_len, 3, 'petal_length_cm', 'Frequency', 'Petal Length', 'petal_length.png')
+var_hist(pet_width, 4, 'petal_width_cm', 'Frequency', 'Petal Width', 'petal_width.png')
 ```
 
 **Output**:
@@ -209,6 +245,33 @@ The second function is almost identical and generates a histogram representing t
 give us any additional information. It can be viewed above (see *species.png*) 
 
 Comparison between each variable is easier when viewed as 4 separate axes on a single figure:
+
+```python
+# 4 axes on one figure for better visual comparison
+fig, axs = plt.subplots(2, 2)
+
+axs1 = axs[0, 0]
+axs1.hist(sep_len, rwidth=0.9)
+axs1.set_title('Sepal_Length_Cm')
+axs1.set(ylabel='frequency')
+
+axs2 = axs[0, 1]
+axs2.hist(sep_width, rwidth=0.9)
+axs2.set_title('Sepal_Width_Cm')
+axs2.set(ylabel='frequency')
+
+axs3 = axs[1, 0]
+axs3.hist(pet_len, rwidth=0.9)
+axs3.set_title('Petal_Length_Cm')
+axs3.set(ylabel='frequency')
+
+axs4 = axs[1, 1]
+axs4.hist(pet_width, rwidth=0.9)
+axs4.set_title('Petal_Width_Cm')
+axs4.set(ylabel='frequency')
+
+plt.show()
+```
 
 ![4 Histograms](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/4_hist.png)
 
@@ -253,12 +316,20 @@ irisScatter(sep_len, sep_width, species)
 ```python
 # Write a function which outputs a scatter plot of each pair of variables.
 # Each categorical variable (species of iris flower) is categorized by colour
-def scatter(x, y, filepath):
+def scatter(x, y):
     sns.set(style="darkgrid")
     sns.lmplot(x, y, iris_data, fit_reg=False, hue='species')
     plt.show()
-    plt.savefig(filepath)
     plt.close()
+
+    
+# Call function for each pair of variables
+scatter('sepal_length', 'sepal_width')
+scatter('sepal_length', 'petal_length')
+scatter('sepal_length', 'petal_width')
+scatter('sepal_width', 'petal_length')
+scatter('sepal_width', 'petal_width')
+scatter('petal_length', 'petal_width')
 ```
 
 **Output:**
