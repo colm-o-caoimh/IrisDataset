@@ -65,7 +65,7 @@ pet_len = iris_data['petal_length']
 pet_width = iris_data['petal_width']
 species = iris_data['species']
 
-
+'''
 # Write a function which outputs a histogram for each dataset variable and saves
 # it as a png file.
 # First for numeric variables
@@ -107,8 +107,8 @@ axs1.set(ylabel='frequency')
 
 axs2 = axs[0, 1]
 axs2.hist(sep_width, rwidth=0.9)
-axs2.set_title('Sepal_Width_Cm')
-axs2.set(ylabel='frequency')
+axs2.set_title('Sepal_Width_Cm', fontdict={'fontsize': 15})
+axs2.set(ylabel='frequency', fontdict={'fontsize': 15})
 
 axs3 = axs[1, 0]
 axs3.hist(pet_len, rwidth=0.9)
@@ -121,10 +121,10 @@ axs4.set_title('Petal_Width_Cm')
 axs4.set(ylabel='frequency')
 
 
-#plt.show()
+plt.show()
 plt.close()
 
-
+'''
 
 # C. Output a scatter plot of each pair of variables
 
@@ -140,7 +140,7 @@ plt.close()
 # Write a function which outputs a scatter plot of each pair of variables.
 # Each categorical variable (species of iris flower) is categorized by colour
 def scatter(x, y):
-    sns.set(style="darkgrid")
+    sns.set(style="darkgrid", font_scale=1.25)
     sns.lmplot(x, y, iris_data, fit_reg=False, hue='species')
     plt.show()
     plt.close()
