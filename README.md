@@ -200,7 +200,10 @@ Species_B  Iris-versicolor    50
 Species_C   Iris-virginica    50
 ```
 
-(see *iris_summary.txt* to view formatted output)
+
+
+
+**note:** see *iris_summary.txt* to view formatted output
 
 ## Histogram
 
