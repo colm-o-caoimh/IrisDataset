@@ -8,7 +8,7 @@ Studio Code.
 ## Data search and download
 * Following a simple Google search, one quickly establishes that the Iris data set is used widely
 in the fields of machine learning and statistics. It is referenced in
-numerous academic publications, student projects, online tutorials etc. There
+numerous academic publications, student projects, online tutorials etc. and there
 is no shortage of sources offering the file for download. The most commonly 
 referenced source appears to be the UCI (University of California Irvine) [website](https://archive.ics.uci.edu/ml/datasets/Iris),
 whose machine learning repository offers the data set for download.
@@ -133,40 +133,18 @@ str_values = iris_data.iloc[:,4]
 
 * For the numeric data, I initially calculated each statistic using the `max()`, `min()` and `median()` functions before 
 applying NumPy's `percentile()` function to the data. I subsequently discovered Pandas `describe()`
-function **(REF)** which outputs a DataFrame containing the relevant statistical information:
+function **(REF)** which outputs a DataFrame containing the relevant statistical information.
+
+* For the dependent variable summary, I used `describe()` once more. A number of additional steps
+were needed to output the information in the same tabular format as above. 
+`str_summary.unique()` creates an `nparray` of each of target variable. This array was then 
+converted to a DataFrame to get the desired format for output. Both tables were written to a txt file:
 
 ```python
 # Use describe function to summarise data
 float_summary = float_values.describe()
 str_summary = str_values.describe()
-```
 
-**Output:**
-
-```
-       sepal_length  sepal_width  petal_length  petal_width 
-count    150.000000   150.000000    150.000000   150.000000 
-mean       5.843333     3.054000      3.758667     1.198667 
-std        0.828066     0.433594      1.764420     0.763161 
-min        4.300000     2.000000      1.000000     0.100000 
-25%        5.100000     2.800000      1.600000     0.300000 
-50%        5.800000     3.000000      4.350000     1.300000 
-75%        6.400000     3.300000      5.100000     1.800000 
-max        7.900000     4.400000      6.900000     2.500000 
-```
-
-* From this table we can deduce that the sepal is larger in size than the petal on average.
-We can also observe trends in the standard deviation, where there appears to be
-a broad symmetry with regard to the length and width of each part of the flower. More detailed 
-exploration below will provide further information and a deeper understanding.
-
-
-* For the dependent variable summary, I used `describe()` once more. A number of additional steps
-were needed to output the information in the same tabular format as above. 
-`str_summary.unique()` creates an `nparray` of each of target variable. This array was then 
-converted to a DataFrame to get the desired format for output:
-
-```python
 # Establish 3 unique values in str_summary.
 # This creates an array of each value.
 str_summary = str_values.unique()
@@ -193,7 +171,27 @@ with open("iris_summary.txt", "w") as f:
     f.write(str_summary.to_string())
 ```
 
-**output:**
+**Output (numeric variable summary):**
+
+```
+       sepal_length  sepal_width  petal_length  petal_width 
+count    150.000000   150.000000    150.000000   150.000000 
+mean       5.843333     3.054000      3.758667     1.198667 
+std        0.828066     0.433594      1.764420     0.763161 
+min        4.300000     2.000000      1.000000     0.100000 
+25%        5.100000     2.800000      1.600000     0.300000 
+50%        5.800000     3.000000      4.350000     1.300000 
+75%        6.400000     3.300000      5.100000     1.800000 
+max        7.900000     4.400000      6.900000     2.500000 
+```
+
+* From this table we can deduce that the sepal is larger in size than the petal on average.
+We can also observe trends in the standard deviation, where there appears to be
+a broad symmetry with regard to the length and width of each part of the flower. More detailed 
+exploration below will provide further information and a deeper understanding.
+
+
+**output (dependent variable sumary):**
 
 ```
                    Species Count
@@ -202,7 +200,7 @@ Species_B  Iris-versicolor    50
 Species_C   Iris-virginica    50
 ```
 
-* The summary output was further formatted and written to a txt file. (see *iris_summary.txt*)
+(see *iris_summary.txt* to view formatted output)
 
 ## Histogram
 
@@ -240,11 +238,11 @@ var_hist(pet_width, 4, 'petal_width_cm', 'Frequency', 'Petal Width', 'petal_widt
 ![Petal Width](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/petal_width.png)
 
 
-The second function is almost identical and generates a histogram representing the
+* The second function is almost identical and generates a histogram representing the
 3 unique values of the target variable (see *analysis.py*). Graphical representation of this variable does not
-give us any additional information. It can be viewed above (see *species.png*) 
+give us any additional information. It can be viewed in this repository (see *species.png*) 
 
-Comparison between each variable is easier when viewed as 4 separate axes on a single figure:
+* Comparison between each variable is easier when viewed as 4 separate axes on a single figure:
 
 ```python
 # 4 axes on one figure for better visual comparison
@@ -291,7 +289,7 @@ observation and representing them as dots. The resulting patterns can be very in
 pattern is informative and does highlight trends in the data, it does not distinguish between
 the categorical variables and so does not tell us the whole story:
 
-![Scatter_1](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/scatter1.png)
+![Scatter_1](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/matplotlib_scatter.png)
 
 * With Matplotlib, distinguishing each categorical variable by colour involves a number of steps. This
 function is based on a solution I found here **(REF)**:
@@ -341,7 +339,7 @@ scatter('petal_length', 'petal_width')
 ![Sepal Width, Petal Width](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/scatterE.png)
 ![Petal Length, Petal Width](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/scatterF.png) 
 
-When separated by colour, each species in the data set is visibly distinguishable. The setosa in particular has 
+* When separated by colour, each species in the data set is visibly distinguishable. The setosa in particular has 
 characteristics which clearly mark it out from the the virginica and the versicolor, regardless of which two 
 variables are plotted. 
 
