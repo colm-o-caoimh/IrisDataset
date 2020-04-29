@@ -264,12 +264,12 @@ def scatter(x, y, filepath):
 
 **Output:**
 
-![Sepal Length, Sepal Width](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/fig1.png)
-![Sepal Length, Petal Length](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/fig.png)
-![Sepal Length, Petal Width](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/fig3.png)
-![Sepal Width, Petal Length](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/fig4.png)
-![Sepal Width, Petal Width](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/fig5.png)
-![Petal Length, Petal Width](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/fig6.png) 
+![Sepal Length, Sepal Width](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/scatterA.png)
+![Sepal Length, Petal Length](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/scatterB.png)
+![Sepal Length, Petal Width](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/scatterC.png)
+![Sepal Width, Petal Length](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/scatterD.png)
+![Sepal Width, Petal Width](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/scatterE.png)
+![Petal Length, Petal Width](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/scatterF.png) 
 
 **Note:** There is quite a lot of discussion around the benefits of certain visualisation tools relative to others.
 Python offers a wide range of options through third party libraries and each has its merits depending on what
