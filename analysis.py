@@ -48,8 +48,14 @@ str_summary.index = ['Species_A', 'Species_B', 'Species_C']
 with open("iris_summary.txt", "w") as f:
     heading = "SUMMARY OF VARIABLES IN IRIS DATASET" 
     f.write(heading + "\n")
-    f.write("=" * len(heading) + "\n\n")
-    f.write(float_summary.to_string() + "\n\n")
+    f.write("=" * len(heading) + "\n\n\n\n")
+    heading2 = "NUMERIC VARIABLE SUMMARY"
+    f.write(heading2 + "\n")
+    f.write("=" * len(heading2) + "\n")
+    f.write(float_summary.to_string() + "\n\n\n\n")
+    heading3 = "DEPENDENT VARIABLE SUMMARY"
+    f.write(heading3 + "\n")
+    f.write("=" * len(heading3) + "\n")
     f.write(str_summary.to_string())
 
 
