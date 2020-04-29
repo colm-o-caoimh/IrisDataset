@@ -214,6 +214,11 @@ The second function is almost identical and generates a histogram representing t
 
 ![Species](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/species.png)
 
+* Comparison between each variable is easier when viewed as 4 separate axes on a single figure:
+
+![4 Histograms](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/4_hist.png)
+
+
 
 ## Scatter plot
 * A scatter plot shows the relationship between two variables in a dataset by plotting each 
