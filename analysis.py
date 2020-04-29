@@ -56,7 +56,7 @@ with open("iris_summary.txt", "w") as f:
     heading3 = "DEPENDENT VARIABLE SUMMARY"
     f.write(heading3 + "\n")
     f.write("=" * len(heading3) + "\n")
-    f.write(str_summary.to_string())
+    f.write(str_summary.to_string() + "\n\n\n\n\n\n\n")
 
 
 

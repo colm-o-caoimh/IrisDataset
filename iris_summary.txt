@@ -23,3 +23,9 @@ DEPENDENT VARIABLE SUMMARY
 Species_A      Iris-setosa    50
 Species_B  Iris-versicolor    50
 Species_C   Iris-virginica    50
+
+
+
+
+
+
