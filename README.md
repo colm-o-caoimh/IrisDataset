@@ -382,7 +382,7 @@ function of a continuous random variable" **(REF)**.
 ## References
 <a id="1">[1]</a>
 UCI Machine Learning Repository, Iris Data Set: https://archive.ics.uci.edu/ml/datasets/Iris
-<a id="2">[2]</a>
+<b id="2">[2]</b>
 GeeksforGeeks, "Numpy in Python | Set 1 (introduction)": https://www.geeksforgeeks.org/numpy-in-python-set-1-introduction/
 
 
