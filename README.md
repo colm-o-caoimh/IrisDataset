@@ -29,7 +29,7 @@ to 3 different species of the iris flower. There are 4 attributes in the sample:
 *sepal width*, *petal length* and *petal width*, referring to the parts of each flower
 measured by Anderson.
 
-## Python Libraries Used
+## Python libraries used
 **NumPy**: NumPy is roundly described as the fundamental package for scientific computing
 and data analysis with Python [[2]](#2). Among the numerous other important features it contains,
 NumPy's ndarray object allows for vectorized mathematical operations which is essential for 
@@ -252,7 +252,7 @@ var_hist(pet_width, 4, 'petal_width_cm', 'Frequency', 'Petal Width', 'petal_widt
 3 unique values of the target variable (see *analysis.py*). Graphical representation of this variable does not
 give us any additional information. It can be viewed in this repository (see [species.png](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/histograms/species.png) in the *histogram* folder) 
 
-* Comparison between each variable is easier when viewed as 4 separate axes on a single figure:
+* Comparison between each variable is easier when viewed as 4 separate axes on a single figure. I found this solution [here](https://matplotlib.org/devdocs/gallery/subplots_axes_and_figures/subplots_demo.html):
 
 ```python
 # 4 axes on one figure for better visual comparison
@@ -364,7 +364,7 @@ to steer me in the right direction.
 
 ## Pairplot
 * Seaborn's `pairplot()` function allows us to view joint (scatter plots) and marginal (histogram or kde) distribution 
-in a single figure, using minimal lines of code:
+in a single figure, using minimal lines of code. [[11]](#11):
 
 ```python
 # Output pairplot using kde to represent marginal distribution
@@ -379,7 +379,7 @@ plt.show()
 
 * From this we get an insightful overview of the data set, combining the various plots used in this project into one
 single figure. The KDE (Kernal Density Estimation) serves as "... a way to estimate the probability density 
-function of a continuous random variable" [[11]](#11).
+function of a continuous random variable" [[12]](#12).
 
 ## References
 <b id="1">[1]</b>
@@ -407,4 +407,6 @@ yale.edu, "Scatterplot": http://www.stat.yale.edu/Courses/1997-98/101/scatter.ht
 https://stackoverflow.com/questions/26139423/plot-different-color-for-different-categorical-levels-using-matplotlib  
 https://stackoverflow.com/questions/14885895/color-by-column-values-in-matplotlib  
 <b id="11">[11]</b>
+python-graph-gallery.com, "#111 Custom correlogram": https://python-graph-gallery.com/111-custom-correlogram/
+<b id="12">[12]</b>
 tutorialspoint.com, "Seaborn - Kernel Density Estimates": https://www.tutorialspoint.com/seaborn/seaborn_kernel_density_estimates.htm  
