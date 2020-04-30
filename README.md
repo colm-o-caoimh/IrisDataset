@@ -19,7 +19,7 @@ presented in Fisher's original paper. This is noted in the dataset documentation
 
 ## Iris data set
 * The data was collected by Edgar Anderson and introduced by Ronald A. Fisher in his
-paper "The use of multiple measurements in taxonomic problems" in 1936. [[1]](#1) According
+paper "The use of multiple measurements in taxonomic problems" in 1936 [[1]](#1). According
 to the UCI website, the paper "... is a classic in the field [of pattern recognition]
 and is referenced frequently to this day" [[2]](#2)
 
@@ -41,7 +41,7 @@ rows (observations) and columns (variables).
 
 **Matplotlib.pyplot**: For data visualisation, Matplotlib is the fundamental library for the
 Python programming language. It provides the underlying structure for many other visualisation libraries
-in Python e.g. Seaborn, Holoviews. [[5]](#5) The pyplot module is used in this project for the generation
+in Python e.g. Seaborn, Holoviews [[5]](#5). The pyplot module is used in this project for the generation
 of histograms to explore the distribution each variable in the data set.
 
 **Seaborn**: Seaborn is built on Matplotlib and provides a "... high level interface for drawing
@@ -214,7 +214,7 @@ Species_C   Iris-virginica    50
 
 ## Histogram
 
-* Histograms are a useful way to visualise and assess the probability distribution of a data sample. [[9]](#9)
+* Histograms are a useful way to visualise and assess the probability distribution of a data sample [[9]](#9).
 Python offers a number of different options to generate a histogram, from pure python to third party libraries
 such as NumPy, Seaborn and Pandas. For this project, I decided to use Matplotlib. The `hist()` function is
 simple to use, needing only one line of code to output an informative graphical representation. 
@@ -364,7 +364,7 @@ to steer me in the right direction.
 
 ## Pairplot
 * Seaborn's `pairplot()` function allows us to view joint (scatter plots) and marginal (histogram or kde) distribution 
-in a single figure, using minimal lines of code. [[12]](#12):
+in a single figure, using minimal lines of code [[12]](#12):
 
 ```python
 # Output pairplot using kde to represent marginal distribution
