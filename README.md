@@ -31,7 +31,7 @@ measured by Anderson.
 
 ## Python Libraries
 **NumPy**: NumPy is roundly described as the fundamental package for scientific computing
-and data analysis with Python **(REF)**. Among the numerous other important features it contains,
+and data analysis with Python [[2]](#2). Among the numerous other important features it contains,
 NumPy's ndarray object allows for vectorized mathematical operations which is essential for 
 any investigation and analysis of data.
 
@@ -381,8 +381,9 @@ function of a continuous random variable" **(REF)**.
 
 ## References
 <a id="1">[1]</a>
-UCI Machine Learning Repository, Iris Data Set: [https://archive.ics.uci.edu/ml/datasets/Iris]
-
+UCI Machine Learning Repository, Iris Data Set: https://archive.ics.uci.edu/ml/datasets/Iris
+<a id="2">[2]</a>
+GeeksforGeeks, "Numpy in Python | Set 1 (introduction)": https://www.geeksforgeeks.org/numpy-in-python-set-1-introduction/
 
 
 
