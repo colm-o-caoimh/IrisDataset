@@ -394,16 +394,16 @@ matplotlib.org, "Third Party Packages": https://matplotlib.org/thirdpartypackage
 realpython.com, "Python Plotting with Matplotlib (Guide)": https://realpython.com/python-matplotlib-guide/  
 <b id="5">[5]</b>
 pydata.org, "Seaborn: Statistical Data Visualization": https://seaborn.pydata.org/  
-<b id="6"[6]</b>
+<b id="6">[6]</b>
 Brownlee, J., 2018, "How to Calculate the 5-Number Summary for Your Data in Python": https://machinelearningmastery.com/how-to-calculate-the-5-number-summary-for-your-data-in-python/  
-<b id="7"[7]</b>
+<b id="7">[7]</b>
 geeksforgeeks.org, "Python | Pandas Dataframe.describe() method": https://www.geeksforgeeks.org/python-pandas-dataframe-describe-method/  
-<b id="8"[8]</b>
+<b id="8">[8]</b>
 realpython.com, "Python Histogram Plotting: NumPy, Matplotlib, Pandas & Seaborn": https://realpython.com/python-histograms/  
-<b id="9"[9]</b>
+<b id="9">[9]</b>
 yale.edu, "Scatterplot": http://www.stat.yale.edu/Courses/1997-98/101/scatter.htm  
-<b id="10"[10]</b>
+<b id="10">[10]</b>
 https://stackoverflow.com/questions/26139423/plot-different-color-for-different-categorical-levels-using-matplotlib  
 https://stackoverflow.com/questions/14885895/color-by-column-values-in-matplotlib  
-<b id="11"[11]</b>
+<b id="11">[11]</b>
 tutorialspoint.com, "Seaborn - Kernel Density Estimates": https://www.tutorialspoint.com/seaborn/seaborn_kernel_density_estimates.htm  
