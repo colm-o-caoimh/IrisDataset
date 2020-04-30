@@ -241,15 +241,15 @@ var_hist(pet_width, 4, 'petal_width_cm', 'Frequency', 'Petal Width', 'petal_widt
 
 **Output**:
 
-![Sepal Length](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/sepal_length.png)
-![Sepal Width](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/sepal_width.png)
-![Petal Length](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/petal_length.png)
-![Petal Width](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/petal_width.png)
+![Sepal Length](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/histograms/petal_length.png)
+![Sepal Width](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/histograms/petal_width.png)
+![Petal Length](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/histograms/sepal_length.png)
+![Petal Width](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/histograms/sepal_width.png)
 
 
 * The second function is almost identical and generates a histogram representing the
 3 unique values of the target variable (see *analysis.py*). Graphical representation of this variable does not
-give us any additional information. It can be viewed in this repository (see *species.png*) 
+give us any additional information. It can be viewed in this repository (see *species.png* in the *histogram* folder) 
 
 * Comparison between each variable is easier when viewed as 4 separate axes on a single figure:
 
