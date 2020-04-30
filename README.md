@@ -42,7 +42,7 @@ rows (observations) and columns (variables).
 **Matplotlib.pyplot**: For data visualisation, Matplotlib is the fundamental library for the
 Python programming language. It provides the underlying structure for many other visualisation libraries
 in Python e.g. Seaborn, Holoviews [[5]](#5). The pyplot module is used in this project for the generation
-of histograms to explore the distribution each variable in the data set.
+of histograms to explore the distribution of each variable in the data set.
 
 **Seaborn**: Seaborn is built on Matplotlib and provides a "... high level interface for drawing
 statistical graphics..." [[6]](#6) It uses much fewer lines of code for certain plot types, when compared
