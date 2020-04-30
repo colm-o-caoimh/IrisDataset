@@ -2,8 +2,8 @@
 Final project Programming and Scripting 2020
 
 ## Introduction
-* In this project I investigate the famous Iris data set using Python. The text editor I used is Visual 
-Studio Code.
+* In this project I investigate the famous Iris data set using the Python programming language. The text editor I used is Visual 
+Studio Code. The third party libraries and packages used are detailed below.
 
 ## Data search and download
 * Following a simple Google search, one quickly establishes that the Iris data set is used widely
@@ -385,28 +385,28 @@ function of a continuous random variable" [[12]](#12).
 <b id="1">[1]</b>
 UCI Machine Learning Repository, Iris Data Set: https://archive.ics.uci.edu/ml/datasets/Iris  
 <b id="2">[2]</b>
-geeksforgeeks.org, "Numpy in Python | Set 1 (introduction)": https://www.geeksforgeeks.org/numpy-in-python-set-1-introduction/  
-SciPy.org, "What is NumPy?": https://docs.scipy.org/doc/numpy/user/whatisnumpy.html  
-medium.com, "Why should we use NumPy?": https://medium.com/fintechexplained/why-should-we-use-numpy-c14a4fb03ee9  
+geeksforgeeks.org, *Numpy in Python | Set 1 (introduction)*: https://www.geeksforgeeks.org/numpy-in-python-set-1-introduction/  
+SciPy.org, *What is NumPy?*: https://docs.scipy.org/doc/numpy/user/whatisnumpy.html  
+medium.com, *Why should we use NumPy?*: https://medium.com/fintechexplained/why-should-we-use-numpy-c14a4fb03ee9  
 <b id="3">[3]</b>
-learnpython.org, "Pandas Basics": https://www.learnpython.org/en/Pandas_Basics  
+learnpython.org, *Pandas Basics*: https://www.learnpython.org/en/Pandas_Basics  
 <b id="4">[4]</b>
-matplotlib.org, "Third Party Packages": https://matplotlib.org/thirdpartypackages/index.html  
-realpython.com, "Python Plotting with Matplotlib (Guide)": https://realpython.com/python-matplotlib-guide/  
+matplotlib.org, *Third Party Packages*: https://matplotlib.org/thirdpartypackages/index.html  
+realpython.com, *Python Plotting with Matplotlib (Guide)*: https://realpython.com/python-matplotlib-guide/  
 <b id="5">[5]</b>
-pydata.org, "Seaborn: Statistical Data Visualization": https://seaborn.pydata.org/  
+pydata.org, *Seaborn: Statistical Data Visualization*: https://seaborn.pydata.org/  
 <b id="6">[6]</b>
-Brownlee, J., 2018, "How to Calculate the 5-Number Summary for Your Data in Python": https://machinelearningmastery.com/how-to-calculate-the-5-number-summary-for-your-data-in-python/  
+Brownlee, J., 2018, *How to Calculate the 5-Number Summary for Your Data in Python*: https://machinelearningmastery.com/how-to-calculate-the-5-number-summary-for-your-data-in-python/  
 <b id="7">[7]</b>
-geeksforgeeks.org, "Python | Pandas Dataframe.describe() method": https://www.geeksforgeeks.org/python-pandas-dataframe-describe-method/  
+geeksforgeeks.org, *Python | Pandas Dataframe.describe() method*: https://www.geeksforgeeks.org/python-pandas-dataframe-describe-method/  
 <b id="8">[8]</b>
-realpython.com, "Python Histogram Plotting: NumPy, Matplotlib, Pandas & Seaborn": https://realpython.com/python-histograms/  
+realpython.com, *Python Histogram Plotting: NumPy, Matplotlib, Pandas & Seaborn*: https://realpython.com/python-histograms/  
 <b id="9">[9]</b>
-yale.edu, "Scatterplot": http://www.stat.yale.edu/Courses/1997-98/101/scatter.htm  
+yale.edu, *Scatterplot*: http://www.stat.yale.edu/Courses/1997-98/101/scatter.htm  
 <b id="10">[10]</b>
 https://stackoverflow.com/questions/26139423/plot-different-color-for-different-categorical-levels-using-matplotlib  
 https://stackoverflow.com/questions/14885895/color-by-column-values-in-matplotlib  
 <b id="11">[11]</b>
-python-graph-gallery.com, "#111 Custom correlogram": https://python-graph-gallery.com/111-custom-correlogram/  
+python-graph-gallery.com, *#111 Custom correlogram*: https://python-graph-gallery.com/111-custom-correlogram/  
 <b id="12">[12]</b>
-tutorialspoint.com, "Seaborn - Kernel Density Estimates": https://www.tutorialspoint.com/seaborn/seaborn_kernel_density_estimates.htm  
+tutorialspoint.com, *Seaborn - Kernel Density Estimates*: https://www.tutorialspoint.com/seaborn/seaborn_kernel_density_estimates.htm  
