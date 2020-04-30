@@ -407,6 +407,6 @@ yale.edu, "Scatterplot": http://www.stat.yale.edu/Courses/1997-98/101/scatter.ht
 https://stackoverflow.com/questions/26139423/plot-different-color-for-different-categorical-levels-using-matplotlib  
 https://stackoverflow.com/questions/14885895/color-by-column-values-in-matplotlib  
 <b id="11">[11]</b>
-python-graph-gallery.com, "#111 Custom correlogram": https://python-graph-gallery.com/111-custom-correlogram/
+python-graph-gallery.com, "#111 Custom correlogram": https://python-graph-gallery.com/111-custom-correlogram/  
 <b id="12">[12]</b>
 tutorialspoint.com, "Seaborn - Kernel Density Estimates": https://www.tutorialspoint.com/seaborn/seaborn_kernel_density_estimates.htm  
