@@ -35,7 +35,7 @@ and data analysis with Python [[2]](#2). Among the numerous other important feat
 NumPy's ndarray object allows for vectorized mathematical operations which is essential for 
 any investigation and analysis of data.
 
-**Pandas**: Pandas is built on the NumPy package and is a high-level data manipulation tool (**REF**).
+**Pandas**: Pandas is built on the NumPy package and is a high-level data manipulation tool [[3]](#3).
 The key data structure associated with Pandas is the DataFrame, which orders data in tables of
 rows (observations) and columns (variables).
 
@@ -380,10 +380,15 @@ single figure. The KDE (Kernal Density Estimation) serves as "... a way to estim
 function of a continuous random variable" **(REF)**.
 
 ## References
-<a id="1">[1]</a>
+<b id="1">[1]</b>
 UCI Machine Learning Repository, Iris Data Set: https://archive.ics.uci.edu/ml/datasets/Iris  
 <b id="2">[2]</b>
-GeeksforGeeks, "Numpy in Python | Set 1 (introduction)": https://www.geeksforgeeks.org/numpy-in-python-set-1-introduction/
+GeeksforGeeks, "Numpy in Python | Set 1 (introduction)": https://www.geeksforgeeks.org/numpy-in-python-set-1-introduction/  
+SciPy.org, "What is NumPy?": https://docs.scipy.org/doc/numpy/user/whatisnumpy.html  
+medium.com, "Why should we use NumPy?": https://medium.com/fintechexplained/why-should-we-use-numpy-c14a4fb03ee9  
+<b id="3">[3}</b>
+learnpython.org, "Pandas Basics": https://www.learnpython.org/en/Pandas_Basics
+
 
 
 
