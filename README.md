@@ -383,7 +383,7 @@ function of a continuous random variable" [[13]](#13).
 
 ## References
 <b id="1">[1]</b>
-wikipedia.org, *Iris flower data set": https://en.wikipedia.org/wiki/Iris_flower_data_set
+wikipedia.org, *Iris flower data set": https://en.wikipedia.org/wiki/Iris_flower_data_set  
 <b id="2">[2]</b>
 UCI Machine Learning Repository, Iris Data Set: https://archive.ics.uci.edu/ml/datasets/Iris  
 <b id="3">[3]</b>
