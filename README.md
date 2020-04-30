@@ -29,7 +29,7 @@ to 3 different species of the iris flower. There are 4 attributes in the sample:
 *sepal width*, *petal length* and *petal width*, referring to the parts of each flower
 measured by Anderson.
 
-## Python Libraries
+## Python Libraries Used
 **NumPy**: NumPy is roundly described as the fundamental package for scientific computing
 and data analysis with Python [[2]](#2). Among the numerous other important features it contains,
 NumPy's ndarray object allows for vectorized mathematical operations which is essential for 
@@ -42,7 +42,7 @@ rows (observations) and columns (variables).
 **Matplotlib.pyplot**: For data visualisation, Matplotlib is the fundamental library for the
 Python programming language. It provides the underlying structure for many other visualisation libraries
 in Python e.g. Seaborn, Holoviews. [[4]](#4) The pyplot module is used in this project for the generation
-of histograms to investigate each variable in the data set.
+of histograms to explore the distribution each variable in the data set.
 
 **Seaborn**: Seaborn is built on Matplotlib and provides a "... high level interface for drawing
 statistical graphics..." [[5]](#5) It uses much fewer lines of code for certain plot types, when compared
@@ -56,7 +56,8 @@ However I eventually settled on Pandas:
 `iris_data = pd.read_csv('iris.data', header=None)`
 
 This loads the data as a DataFrame which enables easier manipulation throughout the program. In addition,
-I found Pandas' handling of string objects to be more intuitive than NumPy's.
+I found Pandas' handling of string objects to be more intuitive than NumPy's. This was particularly important
+for the dependent variable column (iris species).
 
 
 ## Investigating the data
@@ -209,7 +210,7 @@ Species_C   Iris-virginica    50
 
 
 
-**note:** see *iris_summary.txt* to view formatted output
+**note:** see [iris_summary.txt](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/iris_summary.txt) to view formatted output
 
 ## Histogram
 
@@ -249,7 +250,7 @@ var_hist(pet_width, 4, 'petal_width_cm', 'Frequency', 'Petal Width', 'petal_widt
 
 * The second function is almost identical and generates a histogram representing the
 3 unique values of the target variable (see *analysis.py*). Graphical representation of this variable does not
-give us any additional information. It can be viewed in this repository (see *species.png* in the *histogram* folder) 
+give us any additional information. It can be viewed in this repository (see [species.png](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/histograms/species.png) in the *histogram* folder) 
 
 * Comparison between each variable is easier when viewed as 4 separate axes on a single figure:
 
