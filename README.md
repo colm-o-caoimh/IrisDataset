@@ -41,11 +41,11 @@ rows (observations) and columns (variables).
 
 **Matplotlib.pyplot**: For data visualisation, Matplotlib is the fundamental library for the
 Python programming language. It provides the underlying structure for many other visualisation libraries
-in Python e.g. Seaborn, Holoviews. (**REF**) The pyplot module is used in this project for the generation
+in Python e.g. Seaborn, Holoviews. [[4]](#4) The pyplot module is used in this project for the generation
 of histograms to investigate each variable in the data set.
 
 **Seaborn**: Seaborn is built on Matplotlib and provides a "... high level interface for drawing
-statistical graphics..." It uses much fewer lines of code for certain plot types, when compared
+statistical graphics..." [[5]](#5) It uses much fewer lines of code for certain plot types, when compared
 with Matplotlib, which can be quite verbose. In this project I have utlised Seaborn for the 
 purpose of generating insightful scatter plots with minimal lines of code. 
 
@@ -120,7 +120,7 @@ variable contains string values, displayed above as an `object`.
 
 * In order to provide a summary of each variable, I used the **Five-Number Summary** as a
 basic framework. Mathematician John Tukey is credited with having first recommended its usage
-in the analysis of a data set **(REF)**. It involves calculating the minimum, 1st quartile, 
+in the analysis of a data set [[6]](#6). It involves calculating the minimum, 1st quartile, 
 median, 3rd quartile and maximum of a data set in order to describe its distribution.
 
 * I first grouped the variables according to data type:
@@ -133,7 +133,7 @@ str_values = iris_data.iloc[:,4]
 
 * For the numeric data, I initially calculated each statistic using the `max()`, `min()` and `median()` functions before 
 applying NumPy's `percentile()` function to the data. I subsequently discovered Pandas `describe()`
-function **(REF)** which outputs a DataFrame containing the relevant statistical information.
+method [[7]](#7) which outputs a DataFrame containing the relevant statistical information.
 
 * For the dependent variable summary, I used `describe()` once more. A number of additional steps
 were needed to output the information in the same tabular format as above. 
@@ -213,7 +213,7 @@ Species_C   Iris-virginica    50
 
 ## Histogram
 
-* Histograms are a useful way to visualise and assess the probability distribution of a data sample. **(REF)**
+* Histograms are a useful way to visualise and assess the probability distribution of a data sample. [[8]](#8)
 Python offers a number of different options to generate a histogram, from pure python to third party libraries
 such as NumPy, Seaborn and Pandas. For this project, I decided to use Matplotlib. The `hist()` function is
 simple to use, needing only one line of code to output an informative graphical representation. 
@@ -292,7 +292,7 @@ Matplotlib's `hist()` function provides the option of additional binning strateg
 ## Scatter plot
 * A scatter plot shows the relationship between two variables in a dataset by plotting each 
 observation and representing them as dots. The resulting patterns can be very informative,
-"... [indicating] the type and strength of the relationship between the two variables." **(REF)**
+"... [indicating] the type and strength of the relationship between the two variables." [[9]](#9)
 
 * I initially generated scatter plots using Matpotlib's `scatter()` function. However, while the 
 pattern is informative and does highlight trends in the data, it does not distinguish between
@@ -301,7 +301,8 @@ the categorical variables and so does not tell us the whole story:
 ![Scatter_1](https://github.com/colm-o-caoimh/PAS2020_project/blob/master/image_uploads/matplotlib_scatter.png)
 
 * With Matplotlib, distinguishing each categorical variable by colour involves a number of steps. This
-function is based on a solution I found here **(REF)**:
+function is based on solutions I found on stackoverflow.com [[10]](#10). The dictionary `colordict` is defined and maps
+the `species` colours to the plotting colours:
 
 
 ```python
@@ -377,19 +378,32 @@ plt.show()
 
 * From this we get an insightful overview of the data set, combining the various plots used in this project into one
 single figure. The KDE (Kernal Density Estimation) serves as "... a way to estimate the probability density 
-function of a continuous random variable" **(REF)**.
+function of a continuous random variable" [[11]](#11).
 
 ## References
 <b id="1">[1]</b>
 UCI Machine Learning Repository, Iris Data Set: https://archive.ics.uci.edu/ml/datasets/Iris  
 <b id="2">[2]</b>
-GeeksforGeeks, "Numpy in Python | Set 1 (introduction)": https://www.geeksforgeeks.org/numpy-in-python-set-1-introduction/  
+geeksforgeeks.org, "Numpy in Python | Set 1 (introduction)": https://www.geeksforgeeks.org/numpy-in-python-set-1-introduction/  
 SciPy.org, "What is NumPy?": https://docs.scipy.org/doc/numpy/user/whatisnumpy.html  
 medium.com, "Why should we use NumPy?": https://medium.com/fintechexplained/why-should-we-use-numpy-c14a4fb03ee9  
-<b id="3">[3}</b>
-learnpython.org, "Pandas Basics": https://www.learnpython.org/en/Pandas_Basics
-
-
-
-
-
+<b id="3">[3]</b>
+learnpython.org, "Pandas Basics": https://www.learnpython.org/en/Pandas_Basics  
+<b id="4">[4]</b>
+matplotlib.org, "Third Party Packages": https://matplotlib.org/thirdpartypackages/index.html  
+realpython.com, "Python Plotting with Matplotlib (Guide)": https://realpython.com/python-matplotlib-guide/  
+<b id="5">[5]</b>
+pydata.org, "Seaborn: Statistical Data Visualization": https://seaborn.pydata.org/  
+<b id="6"[6]</b>
+Brownlee, J., 2018, "How to Calculate the 5-Number Summary for Your Data in Python": https://machinelearningmastery.com/how-to-calculate-the-5-number-summary-for-your-data-in-python/  
+<b id="7"[7]</b>
+geeksforgeeks.org, "Python | Pandas Dataframe.describe() method": https://www.geeksforgeeks.org/python-pandas-dataframe-describe-method/  
+<b id="8"[8]</b>
+realpython.com, "Python Histogram Plotting: NumPy, Matplotlib, Pandas & Seaborn": https://realpython.com/python-histograms/  
+<b id="9"[9]</b>
+yale.edu, "Scatterplot": http://www.stat.yale.edu/Courses/1997-98/101/scatter.htm  
+<b id="10"[10]</b>
+https://stackoverflow.com/questions/26139423/plot-different-color-for-different-categorical-levels-using-matplotlib  
+https://stackoverflow.com/questions/14885895/color-by-column-values-in-matplotlib  
+<b id="11"[11]</b>
+tutorialspoint.com, "Seaborn - Kernel Density Estimates": https://www.tutorialspoint.com/seaborn/seaborn_kernel_density_estimates.htm  
