@@ -1,4 +1,4 @@
-# PAS2020_project
+# IrisDataset
 Final project Programming and Scripting 2020
 
 ## Introduction
